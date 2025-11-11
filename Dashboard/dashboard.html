@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện Nói</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <span class="logo-text">Luyện Nói</span>
+        </div>
+
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link active">
+                    <i class="fas fa-home"></i>
+                    <span>Trang chủ</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-dumbbell"></i>
+                    <span>Luyện theo câu</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Thi thử</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="user-section">
+            <div class="user-avatar">
+                <i class="fas fa-user"></i>
+            </div>
+            <div>
+                <div style="font-weight: 600; color: #333;">Tài khoản</div>   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="header">
+            <h1>Tự Luyện Speaking</h1>
+            <p>Luyện tập hàng ngày để nâng cao kỹ năng nói của bạn</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 30px;">
+            <!-- Left Column -->
+            <div>
+                <!-- Progress Card -->
+                <div class="progress-card">
+                    <div class="progress-header">
+                        <div class="progress-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="progress-info">
+                            <h3>Nhiệm vụ hôm nay</h3>
+                            <div class="progress-count">
+                                <span class="current">0</span>
+                                <span class="current">/25</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="progress-message">Luyện <strong>25</strong> lần để đạt aim nhé!</p>
+                    <p style="color: #999; font-size: 13px; margin-top: 5px;">Nói nhiều mới tiến bộ được đó</p>
+                </div>
+
+                <!-- Streak Card -->
+                <div class="streak-card">
+                    <div class="streak-header">
+                        <div class="streak-icon">🔥</div>
+                        <div style="flex: 1;">
+                            <h3 style="color: #333;">Day(s) Streak</h3>
+                            <div class="streak-number">0</div>
+                            <p style="color: #666; font-size: 14px; margin-top: 5px;">Hoàn thành nhiệm vụ để bắt đầu streak nè</p>
+                            <p style="color: #999; font-size: 13px; margin-top: 5px;">Đông đá streak : còn 0 (ngày) 🔥</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Practice Sections -->
+                <h2 style="color: white; margin: 30px 0 20px 0;">Các tính năng</h2>
+                <div class="practice-sections">
+                    <!-- Luyện theo câu -->
+                    <div class="practice-card">
+                        <h3>
+                            <i class="fas fa-dumbbell" style="color: #667eea;"></i>
+                            Luyện theo câu
+                        </h3>
+                        <p>Trả lời câu hỏi tự chọn. Nhận sửa lỗi và đánh giá liền tục.</p>
+                        <div class="part-buttons">
+                            <button class="part-btn">PART 1 ></button>
+                            <button class="part-btn">PART 2 ></button>
+                            <button class="part-btn">PART 3 ></button>
+                            <button class="part-btn outline">Tự thêm câu</button>
+                        </div>
+                    </div>
+
+                    <!-- Thi Thử -->
+                    <div class="practice-card">
+                        <h3>
+                            <i class="fas fa-clipboard-list" style="color: #667eea;"></i>
+                            Thi Thử
+                        </h3>
+                        <p>Trả lời một bộ câu hỏi ngẫu nhiên. Câu trúc giống bài thi thật.</p>
+                        <div class="part-buttons">
+                            <button class="part-btn">PART 1 ></button>
+                            <button class="part-btn">PART 2 ></button>
+                            <button class="part-btn">PART 3 ></button>
+                            <button class="part-btn outline">FULL TEST></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Calendar & Forecast -->
+            <div>
+                <!-- Calendar -->
+                <div class="calendar">
+                    <div class="calendar-header">
+                        <h3 style="color: #333; font-size: 11.5px;">Tháng 6 Tháng 7 Tháng 8 Tháng 9 Tháng 10 Tháng 11</h3>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; margin-bottom: 10px;">
+                        <div></div>
+                        <div style="text-align: center; font-size: 12px; color: #999;">Tue</div>
+                        <div></div>
+                        <div style="text-align: center; font-size: 12px; color: #999;">Thu</div>
+                        <div></div>
+                        <div style="text-align: center; font-size: 12px; color: #999;">Sat</div>
+                    </div>
+                    <div class="calendar-grid">
+                        <!-- Tạo 7x8 = 56 ô -->
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day active"></div>
+                    </div>
+                    <div style="margin-top: 15px; display: flex; gap: 4px; font-size: 12px;">
+                        <span>Đông</span>
+                        <span style="color: #0fa4df;">■</span>
+                    </div>
+                    <div style="margin-top: 15px; display: flex; gap: 4px; font-size: 12px;">
+                         <span>Học</span>
+                        <span style="color: #4caf50;">■</span>
+                    </div>
+                </div>
+
+                <!-- Forecast -->
+                <div class="forecast">
+                    <div class="forecast-header">
+                        <h3>Forecast <i class="fas fa-info-circle" style="color: #999; font-size: 14px;"></i></h3>
+                        <span class="forecast-date">Cập nhật ngày 7/10/2025</span>
+                    </div>
+                    <div class="forecast-parts">
+                        <div class="forecast-part">
+                            <span>Part 1</span>
+                            <span>0/0</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 0%;"></div>
+                        </div>
+                        
+                        <div class="forecast-part">
+                            <span>Part 2</span>
+                            <span>0/0</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 0%;"></div>
+                        </div>
+                        
+                        <div class="forecast-part">
+                            <span>Part 3</span>
+                            <span>0/0</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
