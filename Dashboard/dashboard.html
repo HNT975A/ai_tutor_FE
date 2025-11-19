@@ -31,20 +31,32 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="../Dashboard/Topics/topics.html" class="nav-link">
                     <i class="fas fa-clipboard-list"></i>
-                    <span>Thi thử</span>
+                    <span>Chủ đề</span>
                 </a>
             </li>
         </ul>
 
-        <div class="user-section">
+       <div class="user-section" id="userSection">
             <div class="user-avatar">
                 <i class="fas fa-user"></i>
             </div>
             <div>
                 <div style="font-weight: 600; color: #333;">Tài khoản</div>   
-                </div>
+            </div>
+            <i class="fas fa-chevron-down" id="chevronIcon" style="margin-left: auto; color: #666; transition: transform 0.3s; font-size: 12px;"></i>
+        </div>
+
+        <!-- User Menu Dropdown -->
+        <div class="user-menu" id="userMenu">
+            <div class="user-menu-item">
+                <i class="fas fa-user-circle"></i>
+                <span>Thông tin cá nhân</span>
+            </div>
+            <div class="user-menu-item logout">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Đăng xuất</span>
             </div>
         </div>
     </div>
@@ -112,14 +124,14 @@
                     <div class="practice-card">
                         <h3>
                             <i class="fas fa-clipboard-list" style="color: #667eea;"></i>
-                            Thi Thử
+                            Chủ đề
                         </h3>
-                        <p>Trả lời một bộ câu hỏi ngẫu nhiên. Câu trúc giống bài thi thật.</p>
+                        <p>Chọn chủ đề mong muốn để học và có thể giao tiếp với AI khi đang học.</p>
                         <div class="part-buttons">
-                            <button class="part-btn">PART 1 ></button>
-                            <button class="part-btn">PART 2 ></button>
-                            <button class="part-btn">PART 3 ></button>
-                            <button class="part-btn outline">FULL TEST></button>
+                            <button class="part-btn">Chủ đề 1 ></button>
+                            <button class="part-btn">Chủ đề 2 ></button>
+                            <button class="part-btn">Chủ đề 3 ></button>
+                            <button class="part-btn outline">Tất cả chủ đề></button>
                         </div>
                     </div>
                 </div>
@@ -217,7 +229,7 @@
                     </div>
                     <div class="forecast-parts">
                         <div class="forecast-part">
-                            <span>Part 1</span>
+                            <span>Chủ đề 1</span>
                             <span>0/0</span>
                         </div>
                         <div class="progress-bar">
@@ -225,7 +237,7 @@
                         </div>
                         
                         <div class="forecast-part">
-                            <span>Part 2</span>
+                            <span>Chủ đề 2</span>
                             <span>0/0</span>
                         </div>
                         <div class="progress-bar">
@@ -233,7 +245,7 @@
                         </div>
                         
                         <div class="forecast-part">
-                            <span>Part 3</span>
+                            <span>Chủ đề 3</span>
                             <span>0/0</span>
                         </div>
                         <div class="progress-bar">
@@ -244,5 +256,6 @@
             </div>
         </div>
     </div>
+    <script src="dashboard.js"></script>
 </body>
 </html>
