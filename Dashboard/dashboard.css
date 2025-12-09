@@ -434,3 +434,159 @@
             text-align: center;
             font-size: 16px;
         }
+        /* Recording Section Styles */
+.recording-section {
+    margin-top: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 15px;
+    border: 2px solid #dee2e6;
+}
+
+.recording-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.recording-controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.record-btn, .play-record-btn, .delete-record-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9em;
+}
+
+.record-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.record-btn:hover {
+    background: #c82333;
+    transform: scale(1.05);
+}
+
+.record-btn.recording {
+    background: #28a745;
+    animation: pulse 1.5s infinite;
+}
+
+.play-record-btn {
+    background: #007bff;
+    color: white;
+}
+
+.play-record-btn:hover:not(:disabled) {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+.delete-record-btn {
+    background: #6c757d;
+    color: white;
+}
+
+.delete-record-btn:hover:not(:disabled) {
+    background: #545b62;
+    transform: scale(1.05);
+}
+
+.record-btn:disabled, .play-record-btn:disabled, .delete-record-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.recording-timer {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #dc3545;
+    margin-bottom: 15px;
+    font-family: 'Courier New', monospace;
+}
+
+.recording-visualizer {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 3px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.visualizer-bar {
+    width: 6px;
+    background: #007bff;
+    border-radius: 3px;
+    transition: height 0.1s ease;
+    height: 5px;
+}
+
+.visualizer-bar.active {
+    background: #dc3545;
+}
+
+.recording-feedback {
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    background: white;
+    border: 2px dashed #dee2e6;
+}
+
+.recording-feedback.recording {
+    border-color: #dc3545;
+    background: #fff5f5;
+}
+
+.recording-feedback.recorded {
+    border-color: #28a745;
+    background: #f8fff9;
+}
+
+.feedback-text {
+    margin: 0;
+    font-weight: 500;
+}
+
+.feedback-time {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Animation for recording */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive design for recording */
+@media (max-width: 768px) {
+    .recording-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .record-btn, .play-record-btn, .delete-record-btn {
+        width: 200px;
+    }
+}

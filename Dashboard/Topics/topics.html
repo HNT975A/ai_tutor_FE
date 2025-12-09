@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chủ đề học</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="topics.css">
+    <link rel="stylesheet" href="../Topics/topics-css/base.css">
+    <link rel="stylesheet" href="../Topics/topics-css/header.css">
+    <link rel="stylesheet" href="../Topics/topics-css/matching-game.css">
+    <link rel="stylesheet" href="../Topics/topics-css/modal.css">
+    <link rel="stylesheet" href="../Topics/topics-css/pronun-game.css">
+    <link rel="stylesheet" href="../Topics/topics-css/recording.css">
+    <link rel="stylesheet" href="../Topics/topics-css/responsive.css">
+    <link rel="stylesheet" href="../Topics/topics-css/tabs.css">
+    <link rel="stylesheet" href="../Topics/topics-css/topics-grid.css">
+
 </head>
+
 <body>
     <button class="back-btn" onclick="history.back()">
         <i class="fas fa-arrow-left"></i> Quay lại
@@ -35,6 +46,125 @@
             <!-- Topics will be inserted here -->
         </div>
     </div>
-    <script src="topics.js"></script>
+
+    <!-- Word Matching & Pronunciation Modal -->
+    <div id="learningModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTopicName">Học từ vựng</h2>
+                <span class="close-btn" onclick="closeLearningModal()">&times;</span>
+            </div>
+
+            <!-- Game Tabs -->
+            <div class="game-tabs">
+                <button class="game-tab active" data-tab="matching" onclick="showGameTab('matching')">
+                    <i class="fas fa-link"></i> Nối từ
+                </button>
+                <button class="game-tab" data-tab="pronunciation" onclick="showGameTab('pronunciation')">
+                    <i class="fas fa-volume-up"></i> Phát âm
+                </button>
+            </div>
+
+            <!-- Matching Game -->
+            <div id="matchingGame" class="game-content active">
+                <div class="game-instruction">
+                    <p>Chọn từ tiếng Việt và nghĩa tiếng Anh tương ứng</p>
+                </div>
+                <div class="matching-container">
+                    <div class="words-column" id="wordsColumn">
+                        <!-- Vietnamese words will be loaded here -->
+                    </div>
+                    <div class="meanings-column" id="meaningsColumn">
+                        <!-- English meanings will be loaded here -->
+                    </div>
+                </div>
+                <div class="connections-display" id="connectionsDisplay">
+                    <p>Các cặp từ đã nối sẽ hiển thị ở đây</p>
+                </div>
+                <div class="game-controls">
+                    <button class="control-btn btn-check" onclick="checkMatches()">
+                        <i class="fas fa-check"></i> Kiểm tra
+                    </button>
+                    <button class="control-btn btn-reset" onclick="resetGame()">
+                        <i class="fas fa-redo"></i> Làm lại
+                    </button>
+                    <button class="control-btn btn-close" onclick="closeLearningModal()">
+                        <i class="fas fa-times"></i> Đóng
+                    </button>
+                </div>
+                <div id="resultMessage"></div>
+            </div>
+
+            <!-- Pronunciation Game -->
+            <div id="pronunciationGame" class="game-content">
+                <div class="pronunciation-section">
+                    <h3 class="pronunciation-title">Luyện phát âm tiếng Anh</h3>
+
+                    <div class="word-card">
+                        <div class="word-english" id="currentEnglish">Hello</div>
+                        <div class="word-vietnamese" id="currentVietnamese">Xin chào</div>
+                        <div class="word-meaning" id="currentMeaning">Xin chào, rất vui được gặp bạn</div>
+
+                        <div class="pronunciation-controls">
+                            <button class="pronounce-btn" id="englishBtn" onclick="speakEnglish()">
+                                <i class="fas fa-volume-up"></i> Phát âm
+                            </button>
+                            <button class="control-btn" onclick="prevWord()">
+                                <i class="fas fa-chevron-left"></i> Trước
+                            </button>
+                            <button class="control-btn" onclick="nextWord()">
+                                <i class="fas fa-chevron-right"></i> Sau
+                            </button>
+                        </div>
+
+                        <!-- THÊM PHẦN GHI ÂM VÀO ĐÂY -->
+                        <div class="recording-section">
+                            <h4 class="recording-title">Luyện nói & Ghi âm</h4>
+                            <div class="recording-controls">
+                                <button class="record-btn" id="recordBtn" onclick="startRecording()">
+                                    <i class="fas fa-microphone"></i> Bắt đầu ghi âm
+                                </button>
+                                <button class="play-record-btn" id="playRecordBtn" onclick="playRecording()" disabled>
+                                    <i class="fas fa-play"></i> Nghe lại
+                                </button>
+                                <button class="delete-record-btn" id="deleteRecordBtn" onclick="deleteRecording()"
+                                    disabled>
+                                    <i class="fas fa-trash"></i> Xóa
+                                </button>
+                            </div>
+                            <div class="recording-timer" id="recordingTimer">00:00</div>
+                            <div class="recording-visualizer" id="visualizer">
+                                <div class="visualizer-bar"></div>
+                                <div class="visualizer-bar"></div>
+                                <div class="visualizer-bar"></div>
+                                <div class="visualizer-bar"></div>
+                                <div class="visualizer-bar"></div>
+                                <div class="visualizer-bar"></div>
+                                <div class="visualizer-bar"></div>
+                                <div class="visualizer-bar"></div>
+                            </div>
+                            <div class="recording-feedback" id="recordingFeedback">
+                                <p>Ghi âm để so sánh với phát âm chuẩn</p>
+                            </div>
+                        </div>
+                        <!-- KẾT THÚC PHẦN GHI ÂM -->
+                    </div>
+
+                    <div class="words-list" id="wordsList">
+                        <!-- Words list will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="../Topics/topics-js/data.js"></script>
+        <script src="../Topics/topics-js/event-handlers.js"></script>
+        <script src="../Topics/topics-js/main.js"></script>
+        <script src="../Topics/topics-js/matching-game.js"></script>
+        <script src="../Topics/topics-js/modal-manager.js"></script>
+        <script src="../Topics/topics-js/pronun-game.js"></script>
+        <script src="../Topics/topics-js/recording.js"></script>
+        <script src="../Topics/topics-js/topic-manager.js"></script>
 </body>
+
 </html>
